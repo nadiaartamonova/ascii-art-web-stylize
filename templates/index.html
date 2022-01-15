@@ -1,0 +1,62 @@
+{{ define "index" }}
+{{ template "header"}}
+                 
+                <h1> Ascii - stylizer </h1> 
+                <img src="static/img/logo-2.png" width="150px" class="rounded float-start" alt="logo">
+                
+                    
+                    <span> 1. </span> Type whatever text you like into the box. <br>
+                    <span> 2. </span> Choose your preferred font (default is standard). <br>
+                    <span> 3. </span> Click to submit. Text  will convert to ASCII-font-type. <br>
+                    <span> NB! </span> Non-standard ASCII characters and fonts will send you to error page. <br>
+                
+                <div style="clear:both"></div>
+                <div class="form-group">
+                    <form action="/get" method="POST">
+                        
+                        <label class="col-form-label mt-4" for="inputDefault">Input text: </label>
+                        <textarea class="form-control" name="text" rows="3" placeholder="Hello world"></textarea>
+                            
+                        <div class="row">&nbsp</div>
+                        
+                        <div class="row">
+                            <div class="col-sm text-center">
+                                <input type="radio" class="form-check-input"  name="font" value="standard.txt" autocomplete="off" checked>
+                                <label class="form-check-label"> Font standard </label>
+                            </div>
+                                                            
+                            <div class="col-sm text-center"> 
+                                <input type="radio" class="form-check-input" name="font" value="shadow.txt" autocomplete="off">
+                                <label class="form-check-label"> Font shadow </label>
+                                                
+                            </div>
+                                                            
+                            <div class="col-sm text-center">
+                                <input type="radio" class="form-check-input" name="font" value="thinkertoy.txt" autocomplete="off">
+                                <label class="form-check-label"> Font thinkertoy </label>
+                            </div>
+                                                            
+                            <div class="row" style="height: 25px;">&nbsp</div>
+                                
+                            <div class="row">
+                                <div class="text text-center">
+                                    <input autofocus type="submit" value="Submit" class="btn btn-danger">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    
+                    <div >
+                        <pre>{{.}}</pre>
+                    </div>
+                    
+                
+                </div>
+
+           </div>
+{{ template "footer"}}
+{{ end }}

@@ -1,0 +1,16 @@
+{{ define "404" }}
+{{ template "header"}}
+<div class="sm text-center"> 
+<img src="static/img/clipart1113195.png" width="150px" alt="logo">
+</div>          
+
+<h1 style="padding-top: 20px;">{{ .Number }} error</h1>
+<p style="text-align: center; padding-top: 20px;"> {{ .Message }} </p>
+<div class="sm text-center"> 
+    <a href="/" class="btn btn-danger" role="button"> Home page </a>
+</div>
+</div>
+<div class="col"> </div>
+    
+{{ template "footer"}}
+{{ end }}
